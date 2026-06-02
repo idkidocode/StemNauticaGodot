@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 500.0
-const ACCEL = 1000.0
-const FRICTION = 400.0
-const DOWNSPEED = 100.0
+@export var SPEED = 500.0
+@export var ACCEL = 1000.0
+@export var FRICTION = 400.0
+@export var DOWNSPEED = 100.0
 
 func _process(delta: float) -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -16,4 +16,3 @@ func _process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.DOWN, DOWNSPEED * delta)
 		
 	move_and_slide()
-	#
